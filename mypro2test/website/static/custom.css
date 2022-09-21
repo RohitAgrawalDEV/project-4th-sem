@@ -1,0 +1,183 @@
+.cardQ {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+
+.card {
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+#form_login_askquestion {
+  left: 50%;
+  top: 50%;
+  margin-left: -25%;
+  position: absolute;
+  margin-top: -18%;
+}
+
+#form_login_askquestion9 {
+  margin-top: 18%;
+}
+
+.debateItem {
+  background-image: url("../static/fire-8129.png");
+  background-size: 80% 20px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  margin: 5px;
+  font-size: large;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 16px Arial;
+}
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type="text"] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type="submit"] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+/* this is debate css */
+
+.debody {
+  background-size: cover;
+  background-image: url("../static/bms-image.jpg");
+}
+
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  width: 750px;
+  height: max-content;
+  background-color: white;
+  max-width: 80%;
+}
+
+#modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.tips {
+  border: 1px solid lightseagreen;
+  background-color: #bdb76b;
+  padding-bottom: 10px;
+}
+
+.tip {
+  color: darkcyan;
+}
+
+.tips-text {
+  color: darkred;
+  margin-left: 20px;
+}
+
+.ask-tags {
+  margin-left: 5px;
+  margin-top: 4px;
+  font-size: 20px;
+}
+
+.header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transform: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}

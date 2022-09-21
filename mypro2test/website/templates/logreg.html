@@ -1,0 +1,42 @@
+<db_connect class="php"></db_connect>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='logreg.css') }}"
+    />
+    <title>login and register page</title>
+  </head>
+  <body>
+    <div id="main">
+      <div class="ask">
+        <h1>AskBMS</h1>
+      </div>
+      <p id="p1">
+        ADMIN<br />
+        <span class="size"><a href="/login3">click to login</a> </span
+        ><br /><br /><span class="size1"
+          >Don't have an account?<a href="register3">Register</a></span
+        >
+      </p>
+      <p id="p2">
+        TEACHER<br />
+        <span class="size"><a href="login2">click to login</a></span
+        ><br /><br /><span class="size1"
+          >Don't have an account?<a href="register2">Register</a></span
+        >
+      </p>
+      <p id="p3">
+        STUDENT<br />
+        <span class="size"><a href="login1">click to login</a></span
+        ><br /><br /><span class="size1"
+          >Don't have an account?<a href="register1">Register</a></span
+        >
+      </p>
+    </div>
+  </body>
+</html>

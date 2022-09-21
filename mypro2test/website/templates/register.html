@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='register.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <title>Register</title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error' %}
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+    <div class="login-page">
+      <div class="form-box">
+        <div class="ask">
+          <h1>askBMS</h1>
+        </div>
+        <div class="button-box">
+          <div id="button"></div>
+          <button type="button" class="toggle-button" onclick="register()">
+            Register
+          </button>
+          <button type="button" class="toggle-button" onclick="login()">
+            Login
+          </button>
+
+          <div>
+            <form
+              id="register"
+              class="register-data"
+              action="/home"
+              method="POST"
+            >
+              <input
+                type="text"
+                class="input-data"
+                name="usn"
+                placeholder="USN"
+                required
+              />
+              <input
+                type="email"
+                class="input-data"
+                name="email"
+                placeholder="College Mail id"
+                required
+              />
+              <input
+                type="password"
+                class="input-data"
+                name="password1"
+                placeholder="Password"
+                required
+              />
+              <input
+                type="password"
+                class="input-data"
+                name="password2"
+                placeholder="Confirm Password"
+                required
+              />
+              <input type="checkbox" class="check-box" /><span>
+                I agree to the terms and conditions</span
+              >
+              <button type="submit" class="submit-button">Register</button>
+            </form>
+            <form id="login" class="login-data" action="/home" method="POST">
+              <input
+                type="text"
+                class="input-data"
+                name="usn"
+                placeholder="USN"
+                required
+              />
+              <input
+                type="password"
+                class="input-data"
+                name="password"
+                placeholder="Password"
+                required
+              />
+              <input type="checkbox" class="check-box" /><span
+                >Remember me</span
+              >
+
+              <button type="submit" class="submit-button">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var x = document.getElementById("register");
+      var y = document.getElementById("login");
+      var z = document.getElementById("button");
+
+      function login() {
+        x.style.left = "-400px";
+        y.style.left = "-20px";
+        z.style.left = "110px";
+      }
+
+      function register() {
+        x.style.left = "-20px";
+        y.style.left = "400px";
+        z.style.left = "0px";
+      }
+    </script>
+  </body>
+</html>

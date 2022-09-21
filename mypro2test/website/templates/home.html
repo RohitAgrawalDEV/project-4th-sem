@@ -1,0 +1,253 @@
+{%  extends 'homebase.html' %}
+
+
+
+
+
+
+
+{% block head %} 
+<title>AskBMS!!</title>
+{% endblock %}
+
+
+
+
+
+
+{% block body %}
+ <nav class="navbar navbar-expand-lg navbar-light  border-bottom " style="background-color: rgb(77, 77, 78); ">
+      <div class="container-fluid " >
+          <a class="navbar-brand"><img style="width: 50px; " src="/static/logo-bms.png"></a>
+        <a class="navbar-brand" href="/home"><h2 style="color: white;">AskBMS</h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+          <ul class="navbar-nav ms-auto" style="width: max-content;">
+            <li class="nav-item"><a class="nav-link active" aria-current='page' href='https://www.bmsce.ac.in/' style="color: white; text-decoration: underline;">Go to College site</a></li>
+            <!--<button type="button" data-modal-target = "#modal" class="btn btn-primary custom-btn">Ask a Question</button>-->
+            <a class="navbar-brand" href="/askquestion"><p style="color:white;">Ask Question</p></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" style="color: white;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                User Name
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/userprofile">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Notifications</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li> -->
+          </ul>
+            <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ASKQUESTION--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+         <!--   <form action="/home" method="POST">
+              <div id = "modal">
+                <div class = "header">
+                    <h3 class = "title">Ask a question</h3>
+                    <button data-close-button class = "close-button">&times;</button>
+                </div>
+                
+                <div class = "modal-body">
+                <div class = "tips">
+                   <p class = "tips-text">Tips on getting good answers quickly: </p>
+                   <ol>
+                       <li class = "tip">Make sure your question has not been asked already.</li>
+                       <li class = "tip">Keep your question short and to the point.</li>
+                       <li class = "tip">Avoid inapproriate and offensive words.</li>
+                   </ol> 
+                </div>
+
+                <div class="ask-tags">
+                  
+                    <div class="row">
+                      <div class="col-1">
+                        <h6>Tags: </h6>
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" name="tag1" placeholder="#Tag1">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" name="tag2" placeholder="#Tag2">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" name="tag3" placeholder="#Tag3">
+                      </div>
+                    </div>
+                    <div class="col-auto my-1">
+                      <label class="mr-sm-2" for="inlineFormCustomSelect">To Whom is the question directed :</label>
+                      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <option selected>Everyone</option>
+                        <option value="1">Students</option>
+                        <option value="2">Teachers</option>
+                        <option value="3">ALumni</option>
+                      </select>
+                    </div>
+                  
+                </div>
+                <div class = "enter-answer">
+                        <input class = "your-answer" type="text" name="question" placeholder="Question Title*">
+                    </div>
+                    <textarea class="form-control"  rows="3" name="quesdesc" placeholder="Question Description"></textarea>
+                    <button class="btn btn-outline-dark" type = "button" id = "submit" onclick = "show_Message()">Submit</button>
+                </div>
+
+            </form>-->
+
+
+          
+               <!--   <div id = "modal">
+                      <div class = "header">
+                          <h3 class = "title">Ask a question</h3>
+                          <button data-close-button class = "close-button">&times;</button>
+                      </div>
+                      
+                      <div class = "modal-body">
+                      <div class = "tips">
+                         <p class = "tips-text">Tips on getting good answers quickly: </p>
+                         <ol>
+                             <li class = "tip">Make sure your question has not been asked already.</li>
+                             <li class = "tip">Keep your question short and to the point.</li>
+                             <li class = "tip">Avoid inapproriate and offensive words.</li>
+                         </ol> 
+                      </div>
+
+                      <div class="ask-tags">
+                        <form action="/quesask" method="POST">
+                          <div class="row">
+                            <div class="col-1">
+                              <h6>Tags: </h6>
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" name="tag1" placeholder="#Tag1">
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" name="tag2" placeholder="#Tag2">
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" name="tag3" placeholder="#Tag3">
+                            </div>
+                          </div>
+                          <div class="col-auto my-1">
+                            <label class="mr-sm-2" for="inlineFormCustomSelect">To Whom is the question directed :</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                              <option selected>Everyone</option>
+                              <option value="1">Students</option>
+                              <option value="2">Teachers</option>
+                              <option value="3">ALumni</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                      <div class = "enter-answer">
+                              <input class = "your-answer" type="text" name="question" placeholder="Question Title*">
+                          </div>
+                          <textarea class="form-control"  rows="3" name="quesdesc" placeholder="Question Description"></textarea>
+                          <button class="btn btn-outline-dark" type = "button" id = "submit" onclick = "show_Message()">Submit</button>
+                      </div>-->
+                      
+          <!-- <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+        
+      </div>
+    </nav>
+    
+  <div class="container mt-3 contents nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <div class="row">
+          <div class="col flex-box"  height: 100%;">
+              <div class="d-grid gap-2 ms-auto" style="width: 80%;">
+                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link active border" id="v-pills-latest-tab" data-bs-toggle="pill" data-bs-target="#v-pills-latest" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Latest</button>
+                  <button class="nav-link border" id="v-pills-mostviewed-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mostviewed" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Most Viewed</button>
+                  <hr class="ms-auto"  style="width: 100%; margin-top: 15px; margin-bottom: 10px;">
+                  <p>Tags:</p>
+                  <button class="nav-link border" id="v-pills-teachers-tab" data-bs-toggle="pill" data-bs-target="#v-pills-teachers" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">#Teachers</button>
+                  <button class="nav-link border" id="v-pills-students-tab" data-bs-toggle="pill" data-bs-target="#v-pills-students" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">#Students</button>
+                  <button class="nav-link border" id="v-pills-seniors-tab" data-bs-toggle="pill" data-bs-target="#v-pills-seniors" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">#Seniors</button>
+                 </div>
+                </div>
+                <div class="col1">
+                  <div class="row card " style="width: 100%; margin-top:30px; border-radius: 10px;background-color: lightblue;">
+                      <form autocomplete="off" class="d-flex align-items-center flex-column gap-4" >
+                         
+                          <h3> Fun Time</h3>
+                          <a href="https://www.gametop.com/online/gear-madness/">Gear Madness</a>
+                          <a href="https://www.gametop.com/online/arcade-golf/">Arcade Golf</a>
+                          <a href="https://www.gametop.com/online/gold-miner/">Gold Miner</a>
+                          <a href="https://www.gametop.com/online/8-ball-pool/">8 Ball Pool</a>
+                      </form> 
+                    </div>
+                </div>  
+                <div class="col1">
+                  <div class="row card " style="width: 100%; margin-top:30px; border-radius: 10px;background-color: lightblue;">
+                      <form autocomplete="off" class="d-flex align-items-center flex-column gap-4" >
+                         
+                          <h3> Go and Code Now</h3>
+                          <a href="https://www.hackerrank.com/">Hackerrank</a>
+                          <a href="https://www.hackerearth.com/">HackerEarth</a>
+                          <a href="https://www.codecademy.com/?g_network=o&g_device=c&g_adid=&g_keyword=codecademy.com&g_acctid=243-039-7011&g_adtype=search&g_adgroupid=1272135659653067&g_keywordid=kwd-79508866987468:loc-90&g_campaign=INTL_Brand_Phrase&g_campaignid=370462068&utm_id=t_kwd-79508866987468:loc-90:ag_1272135659653067:cp_370462068:n_o:d_c&hsa_acc=2430397011&hsa_cam=12575778360&hsa_grp=1272135659653067&hsa_ad=&hsa_src=o&hsa_tgt=kwd-79508866987468:loc-90&hsa_kw=codecademy.com&hsa_mt=e&hsa_net=adwords&hsa_ver=3&msclkid=10fe446afa691fb58e1c277d4866e21e&utm_source=bing&utm_medium=cpc&utm_campaign=INTL_Brand_Phrase&utm_term=codecademy.com&utm_content=Codecademy">Codecademy</a>
+                          <a href="https://www.codeconquest.com/">Codeconquest</a>
+                      </form> 
+                    </div>
+                </div>  
+                
+          </div>
+          
+          <div class="tab-content col-6 " id="v-pills-tabContent">
+            <a href="/aq/{{post.id}}">
+              {% for i in post %}
+                <h3><b>Question:</b>{{ i.question }}</h3>
+
+                <p><b>Tags:</b> {{ i.tag1 }} {{ i.tag2 }} {{ i.tag3 }}</p>
+
+                <h5><b>Description:</b> {{ i.quesdesc }}</h5>
+                <a href="/h2">Answer</a>
+                <br>
+             {% endfor %}
+            </a>
+            <div class="tab-pane fade show active" id="v-pills-latest" role="tabpanel" aria-labelledby="v-pills-latest-tab" ></div>
+            <div class="tab-pane fade" id="v-pills-mostviewed" role="tabpanel" aria-labelledby="v-pills-mostviewed-tab"></div>
+            <div class="tab-pane fade" id="v-pills-teachers" role="tabpanel" aria-labelledby="v-pills-teachers-tab"></div>
+            <div class="tab-pane fade" id="v-pills-students" role="tabpanel" aria-labelledby="v-pills-students-tab"></div>
+            <div class="tab-pane fade" id="v-pills-seniors" role="tabpanel" aria-labelledby="v-pills-seniors-tab"></div>
+        </div>
+          <div class="col">
+              <div class="row card " style="width: 100%;border-radius: 10px;background-color: lightblue;">
+                  <form autocomplete="off" class="d-flex align-items-center flex-column gap-4" >
+                      <h3>Have anything on your mind?</h3>
+                      
+                          <button class="btn btn-outline-secondary dropdown-toggle " style="width: 50%;" type="button" data-bs-toggle="dropdown" aria-expanded="false">All tags</button>
+                          <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item" href="#">#Sudents</a></li>
+                            <li><a class="dropdown-item" href="#">#Teachers</a></li>
+                            <li><a class="dropdown-item" href="#">#Seniors</a></li>
+                          </ul>
+                          <input style="width: 90%;" type="text" class="form-control mb-3" id="myInput" placeholder="Search Questions" aria-label="Text input with dropdown button">
+                    </form>
+              </div>
+             
+              <hr style="width: 65%;">
+              <p>Live Debates:</p>
+              <div id="debateList" class="list-group">
+                <a href="/covid" class="list-group-item list-group-item-action text-center debateItem">Covid</a>
+                <a href="/hijabrow" class="list-group-item list-group-item-action text-center debateItem">Hijab Row</a>
+                <a href="/vaccination" class="list-group-item list-group-item-action text-center debateItem">Vaccination</a>
+                <a href="/onlineclasses" class="list-group-item list-group-item-action text-center debateItem">Online Classes</a>
+                <a href="/hostelfood" class="list-group-item list-group-item-action text-center debateItem">Hostel Food</a>
+                <a href="/f1" class="list-group-item list-group-item-action text-center debateItem">F1</a>
+
+              </div>
+          </div>
+      </div>
+  </div>
+  <div  id = "overlay"></div>
+  {% endblock %}
+
+
+    
